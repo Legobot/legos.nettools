@@ -18,8 +18,7 @@ class LegoNettools(Lego):
 
         if ' ' in message['text']:
             if len(tokens) >= 2:
-                _class(tokens[1:len(tokens)]).run()
-                # self.reply(message, _class(tokens[1:len(tokens)]).run(), self._handle_opts(message))
+                self.reply(message,  _class(tokens[1:len(tokens)]).run(), self._handle_opts(message))
         else:
             self.reply(message, 'Usage :' + _class(None).getHelp(),
                 self._handle_opts(message))
@@ -47,6 +46,6 @@ class LegoNettools(Lego):
 
     @staticmethod
     def get_help():
-        help_text = '!whois {target}'
+        help_text = '!whois for further information'
 
         return help_text
