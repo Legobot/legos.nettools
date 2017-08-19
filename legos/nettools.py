@@ -10,7 +10,7 @@ class LegoNettools(Lego):
     @staticmethod
     def listening_for(message):
         if message['text'] is not None:
-            return message['text'].startswith('!whois')
+            return True
 
     def handle(self, message):
         tokens = message['text'].split()
@@ -42,7 +42,7 @@ class LegoNettools(Lego):
 
     @staticmethod
     def get_name():
-        return '!whois'
+        return 'nettools'
 
     @staticmethod
     def get_help():

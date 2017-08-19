@@ -43,5 +43,3 @@ class Whois(ToolScheme):
 
     def getHelp(self):
         return "!whois {--getRegistrar | --getNS | --getEmails | --getStatus} {target}"
-
-    #nslookup / sslscan / ping / trace / nslookup / dns / geoloc
