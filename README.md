@@ -46,11 +46,15 @@ The nettools Lego could be triggered by various prefix.
 - [ ] Trace
 - [ ] Ping
 - [ ] SSLscan
-- [ ] IP geo
+- [X ] IP geo
 
 #### Whois
 
 ` !whois {--getStatus | --getEmails | --getRegistrar | --getNS} {target}`
+
+#### Geolocalisation
+
+` !geoloc {target}`
 
 ## Contributing
 
