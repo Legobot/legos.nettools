@@ -2,6 +2,7 @@ import whois
 
 from legos.tools.Tool import ToolScheme
 
+
 class Whois(ToolScheme):
     """The Whois class wrappes the whois linux binary.
     """
@@ -10,10 +11,10 @@ class Whois(ToolScheme):
             super().__init__(args)
 
             self.fncs = {
-                'getRegistrar' : self._getRegistrar,
-                'getNS' : self._getNS,
-                'getEmails' : self._getEmails,
-                'getStatus' : self._getStatus
+                'getRegistrar': self._getRegistrar,
+                'getNS': self._getNS,
+                'getEmails': self._getEmails,
+                'getStatus': self._getStatus
             }
 
     def run(self):
@@ -80,4 +81,5 @@ class Whois(ToolScheme):
         return ' - '.join(data.emails)
 
     def getHelp(self):
-        return "!whois {--getRegistrar | --getNS | --getEmails | --getStatus} {target}"
+        return "!whois {--getRegistrar | --getNS |" \
+            "--getEmails | --getStatus} {target}"

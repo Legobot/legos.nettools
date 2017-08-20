@@ -38,16 +38,18 @@ class LegoNettools(Lego):
 
         if ' ' in message['text']:
             if len(tokens) >= 2:
-                self.reply(message,  _class(tokens[1:len(tokens)]).run(), self._handle_opts(message))
+                self.reply(message,  _class(tokens[1:len(tokens)]).run(),
+                           self._handle_opts(message))
         else:
             self.reply(message, 'Usage :' + _class(None).getHelp(),
-                self._handle_opts(message))
+                       self._handle_opts(message))
 
     def _factory(self, cmd):
         cmd = cmd.replace('!', '')
         _class = cmd.replace(str(cmd[0]), chr(ord(cmd[0]) - 32))
 
-        return getattr(importlib.import_module('legos.tools.' + _class), _class)
+        return getattr(importlib.import_module('legos.tools.' + _class),
+                       _class)
 
     def _handle_opts(self, message):
         """Identify and set the message sourche channel.
@@ -57,7 +59,8 @@ class LegoNettools(Lego):
             message: The message send by the Legobot framework
 
         Returns:
-            Array: Options needed to send back the response to the Legobot framework
+            Array: Options needed to send back the response to the
+                Legobot framework
         """
         try:
             target = message['metadata']['source_channel']

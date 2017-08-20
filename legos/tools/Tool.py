@@ -1,5 +1,6 @@
 from abc import ABCMeta, abstractmethod
 
+
 class ToolScheme(metaclass=ABCMeta):
     """ToolScheme is an abstract class which should be implemented in any tools
     supported by LegoNettools.
