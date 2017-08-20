@@ -18,17 +18,18 @@ class Whois(ToolScheme):
 
     def run(self):
         data = whois.whois(self.target)
+        results = []
 
-        if self.cmd is not None:
-            return self.fncs[self.cmd](data)
+        if len(self.cmds) > 0:
+            for cmd in self.cmds:
+                results.append(self.fncs[cmd](data))
         else:
-            results = []
             results.append(self._getRegistrar(data))
             results.append(self._getNS(data))
             results.append(self._getEmails(data))
             results.append(self._getStatus(data))
 
-            return '\n'.join(results)
+        return '\n'.join(results)
 
     def _getRegistrar(self, data):
         """Get the target registrar

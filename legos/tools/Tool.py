@@ -5,12 +5,12 @@ class ToolScheme(metaclass=ABCMeta):
     supported by LegoNettools.
     """
     def __init__(self, args):
-        self.cmd = None
+        self.cmds = []
         self.target = None
 
         for arg in args:
             if '--' in arg:
-                self.cmd = arg.replace('--', '')
+                self.cmds.append(arg.replace('--', ''))
             else:
                 self.target = arg
 
