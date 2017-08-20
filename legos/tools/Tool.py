@@ -1,3 +1,8 @@
+#!/usr/bin/env python
+
+__author__      = "Nitrax <nitrax@lokisec.fr>"
+__copyright__   = "Copyright 2017, Legobot"
+
 from abc import ABCMeta, abstractmethod
 
 
