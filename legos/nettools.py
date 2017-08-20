@@ -7,13 +7,32 @@ logger = logging.getLogger(__name__)
 
 
 class LegoNettools(Lego):
+    """LegoNettols provides support for any networking tools.
+
+    Args:
+        Lego: Lego
+    """
     @staticmethod
     def listening_for(message):
+        """Check if the message contains a command that LegoNettools support.
+
+        Args:
+            message: The message send by the Legobot framework
+
+        Returns:
+            Bool: Return True if the command is supported
+        """
         if message['text'] is not None:
             cmds = ['!whois']
             return message['text'].split()[0] in cmds
 
     def handle(self, message):
+        """Generate and execute the class corresponding to the asked command.
+
+        Args:
+            self: self
+            message: The message send by the Legobot framework
+        """
         tokens = message['text'].split()
         _class = self._factory(tokens[0])
 
@@ -31,6 +50,15 @@ class LegoNettools(Lego):
         return getattr(importlib.import_module('legos.tools.' + _class), _class)
 
     def _handle_opts(self, message):
+        """Identify and set the message sourche channel.
+
+        Args:
+            self: self
+            message: The message send by the Legobot framework
+
+        Returns:
+            Array: Options needed to send back the response to the Legobot framework
+        """
         try:
             target = message['metadata']['source_channel']
             opts = {'target': target}
@@ -43,10 +71,26 @@ class LegoNettools(Lego):
 
     @staticmethod
     def get_name():
+        """Get the class name.
+
+        Args:
+            self: self
+
+        Returns:
+            str: Class name
+        """
         return 'nettools'
 
     @staticmethod
     def get_help():
+        """Get helper
+
+        Args:
+            self: self
+
+        Returns:
+            str: Helper
+        """
         help_text = '!whois for further information'
 
         return help_text
