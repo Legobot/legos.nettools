@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 
-__author__      = "Nitrax <nitrax@lokisec.fr>"
-__copyright__   = "Copyright 2017, Legobot"
-
 import importlib
 import logging
 
 from Legobot.Lego import Lego
+
+__author__ = "Nitrax <nitrax@lokisec.fr>"
+__copyright__ = "Copyright 2017, Legobot"
 
 logger = logging.getLogger(__name__)
 
