@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 
-__author__      = "Nitrax <nitrax@lokisec.fr>"
-__copyright__   = "Copyright 2017, Legobot"
-
 import whois
 
 from legos.tools.Tool import ToolScheme
+
+__author__ = "Nitrax <nitrax@lokisec.fr>"
+__copyright__ = "Copyright 2017, Legobot"
 
 
 class Whois(ToolScheme):
@@ -23,19 +23,25 @@ class Whois(ToolScheme):
             }
 
     def run(self):
-        data = whois.whois(self.target)
-        results = []
+        if self.target is not None:
+            data = whois.whois(self.target)
+            results = []
 
-        if len(self.cmds) > 0:
-            for cmd in self.cmds:
-                results.append(self.fncs[cmd](data))
+            if len(self.cmds) > 0:
+                for cmd in self.cmds:
+                    try:
+                        results.append(self.fncs[cmd](data))
+                    except KeyError:
+                        results.append('Command unknown: ' + cmd)
+            else:
+                results.append(self._getRegistrar(data))
+                results.append(self._getNS(data))
+                results.append(self._getEmails(data))
+                results.append(self._getStatus(data))
+
+            return '\n'.join(results)
         else:
-            results.append(self._getRegistrar(data))
-            results.append(self._getNS(data))
-            results.append(self._getEmails(data))
-            results.append(self._getStatus(data))
-
-        return '\n'.join(results)
+            return self.getHelp()
 
     def _getRegistrar(self, data):
         """Get the target registrar
@@ -47,7 +53,7 @@ class Whois(ToolScheme):
         Returns:
             str: Registrar
         """
-        return data.registrar
+        return data.registrar if data.registrar is not None else 'None'
 
     def _getNS(self, data):
         """Get the target name servers
@@ -59,7 +65,8 @@ class Whois(ToolScheme):
         Returns:
             str: Name servers
         """
-        return ' - '.join(data.name_servers)
+        ns = data.name_servers
+        return ' - '.join(ns) if ns is not None else 'None'
 
     def _getStatus(self, data):
         """Get the target status
@@ -71,7 +78,7 @@ class Whois(ToolScheme):
         Returns:
             str: Status
         """
-        return data.status[1]
+        return data.status[1] if data.status is not None else 'None'
 
     def _getEmails(self, data):
         """Get the target emails
@@ -83,7 +90,7 @@ class Whois(ToolScheme):
         Returns:
             str: Emails
         """
-        return ' - '.join(data.emails)
+        return ' - '.join(data.emails) if data.emails is not None else 'None'
 
     def getHelp(self):
         return "!whois {--getRegistrar | --getNS |" \
