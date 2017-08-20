@@ -28,7 +28,7 @@ class LegoNettools(Lego):
             Bool: Return True if the command is supported
         """
         if message['text'] is not None:
-            cmds = ['!whois']
+            cmds = ['!whois', '!geoloc']
             return message['text'].split()[0] in cmds
 
     def handle(self, message):
@@ -99,6 +99,6 @@ class LegoNettools(Lego):
         Returns:
             str: Helper
         """
-        help_text = '!whois for further information'
+        help_text = '[!whois, !geoloc] for further information'
 
         return help_text
