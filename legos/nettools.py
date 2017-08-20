@@ -10,7 +10,8 @@ class LegoNettools(Lego):
     @staticmethod
     def listening_for(message):
         if message['text'] is not None:
-            return True
+            cmds = ['!whois']
+            return message['text'].split()[0] in cmds
 
     def handle(self, message):
         tokens = message['text'].split()
