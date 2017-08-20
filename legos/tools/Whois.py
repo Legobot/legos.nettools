@@ -3,7 +3,8 @@ import whois
 from legos.tools.Tool import ToolScheme
 
 class Whois(ToolScheme):
-
+    """The Whois class wrappes the whois linux binary.
+    """
     def __init__(self, args):
         if args is not None:
             super().__init__(args)
@@ -30,15 +31,51 @@ class Whois(ToolScheme):
             return '\n'.join(results)
 
     def _getRegistrar(self, data):
+        """Get the target registrar
+
+        Args:
+            self: self
+            data: Whois results
+
+        Returns:
+            str: Registrar
+        """
         return data.registrar
 
     def _getNS(self, data):
+        """Get the target name servers
+
+        Args:
+            self: self
+            data: Whois results
+
+        Returns:
+            str: Name servers
+        """
         return ' - '.join(data.name_servers)
 
     def _getStatus(self, data):
+        """Get the target status
+
+        Args:
+            self: self
+            data: Whois results
+
+        Returns:
+            str: Status
+        """
         return data.status[1]
 
     def _getEmails(self, data):
+        """Get the target emails
+
+        Args:
+            self: self
+            data: Whois results
+
+        Returns:
+            str: Emails
+        """
         return ' - '.join(data.emails)
 
     def getHelp(self):
