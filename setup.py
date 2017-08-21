@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 
-__author__      = "Nitrax <nitrax@lokisec.fr>"
-__copyright__   = "Copyright 2017, Legobot"
-
 from setuptools import setup, find_packages
+
+__author__ = "Nitrax <nitrax@lokisec.fr>"
+__copyright__ = "Copyright 2017, Legobot"
+
 description = 'Lego providing networking tools'
 name = 'legos.nettools'
 setup(
@@ -15,7 +16,8 @@ setup(
     author='Nitrax',
     url='https://github.com/Legobot/' + name,
     install_requires=['legobot>=1.0.1',
-                      'python-whois'
+                      'python-whois',
+                      'urllib3'
                       ],
     classifiers=[
         'License :: MIT',
