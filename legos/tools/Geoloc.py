@@ -39,7 +39,7 @@ class Geoloc(ToolScheme):
         try:
             content = json.loads(res.data.decode('utf-8'))
 
-            return content['county_name'] + ' [' \
+            return content['country_name'] + ' [' \
                 + content['country_code'] + ']' \
                 + ' --- ' + content['city'] + ' {' \
                 + str(content['longitude']) \
