@@ -10,9 +10,9 @@ python:
 - pypy
 script:
 - bandit -r legos/nettools.py
-- bandit -r legos/tools
-- flake8 legos/netools.py
-- flake8 legos/tools
+- bandit -r legos/tools/
+- flake8 legos/nettools.py
+- flake8 legos/tools/
 notifications:
   irc: irc.0x00sec.org#legobot
   on_success: change
