@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 
-from threading import Lock
 from legos.libs.ICMP import ping
 from legos.tools.Tool import ToolScheme
 
