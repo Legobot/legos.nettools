@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+from Legobot.Utilities import Utilities
 from legos.libs.ICMP import ping
 from legos.tools.Tool import ToolScheme
 
@@ -12,7 +13,7 @@ class Ping(ToolScheme):
     """
 
     def __init__(self, args):
-        if args is not None:
+        if Utilities.isNotEmpty(args):
             super().__init__(args)
 
     def run(self):
