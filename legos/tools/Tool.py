@@ -1,12 +1,16 @@
 #!/usr/bin/env python
 
-from abc import ABCMeta, abstractmethod
+# from abc import ABCMeta, abstractmethod
+
+import abc
 
 __author__ = "Nitrax <nitrax@lokisec.fr>"
 __copyright__ = "Copyright 2017, Legobot"
 
+ABC = abc.ABCMeta('ABC', (object,), {'__slots__': ()})
 
-class ToolScheme(metaclass=ABCMeta):
+
+class ToolScheme(ABC):
     """ToolScheme is an abstract class which should be implemented in any tools
     supported by LegoNettools.
     """
@@ -20,7 +24,7 @@ class ToolScheme(metaclass=ABCMeta):
             else:
                 self.target = arg
 
-    @abstractmethod
+    @abc.abstractmethod
     def run(self):
         """Tool entry point.
 
@@ -29,7 +33,7 @@ class ToolScheme(metaclass=ABCMeta):
         """
         pass
 
-    @abstractmethod
+    @abc.abstractmethod
     def getHelp(self):
         """Tool helper.
 
