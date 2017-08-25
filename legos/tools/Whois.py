@@ -2,6 +2,7 @@
 
 import whois
 
+from Legobot.Utilities import Utilities as utils
 from legos.tools.Tool import ToolScheme
 
 __author__ = "Nitrax <nitrax@lokisec.fr>"
@@ -12,7 +13,7 @@ class Whois(ToolScheme):
     """The Whois class wrappes the whois linux binary.
     """
     def __init__(self, args):
-        if args is not None:
+        if utils.isNotEmpty(args):
             super().__init__(args)
 
             self.fncs = {
@@ -23,7 +24,7 @@ class Whois(ToolScheme):
             }
 
     def run(self):
-        if self.target is not None:
+        if utils.isNotEmpty(self.target):
             data = whois.whois(self.target)
             results = []
 
@@ -53,7 +54,7 @@ class Whois(ToolScheme):
         Returns:
             str: Registrar
         """
-        return data.registrar if data.registrar is not None else 'None'
+        return data.registrar if utils.isNotEmpty(data.registrar) else 'None'
 
     def _getNS(self, data):
         """Get the target name servers
@@ -66,7 +67,7 @@ class Whois(ToolScheme):
             str: Name servers
         """
         ns = data.name_servers
-        return ' - '.join(ns) if ns is not None else 'None'
+        return ' - '.join(ns) if utils.isNotEmpty(ns)else 'None'
 
     def _getStatus(self, data):
         """Get the target status
@@ -78,7 +79,7 @@ class Whois(ToolScheme):
         Returns:
             str: Status
         """
-        return data.status[1] if data.status is not None else 'None'
+        return data.status[1] if utils.isNotEmpty(data.status) else 'None'
 
     def _getEmails(self, data):
         """Get the target emails
@@ -90,7 +91,11 @@ class Whois(ToolScheme):
         Returns:
             str: Emails
         """
-        return ' - '.join(data.emails) if data.emails is not None else 'None'
+
+        if utils.isNotEmpty(data.emails):
+            return ' - '.join(data.emails)
+        else:
+            return 'None'
 
     def getHelp(self):
         return "!whois {--getRegistrar | --getNS |" \

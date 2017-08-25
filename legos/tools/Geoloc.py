@@ -3,6 +3,7 @@
 import json
 import urllib3
 
+from Legobot.Utilities import Utilities
 from legos.tools.Tool import ToolScheme
 
 __author__ = "Nitrax <nitrax@lokisec.fr>"
@@ -14,7 +15,7 @@ class Geoloc(ToolScheme):
     """
 
     def __init__(self, args):
-        if args is not None:
+        if Utilities.isNotEmpty(args):
             super().__init__(args)
 
     def run(self):

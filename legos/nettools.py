@@ -4,6 +4,7 @@ import importlib
 import logging
 
 from Legobot.Lego import Lego
+from Legobot.Utilities import Utilities
 
 __author__ = "Nitrax <nitrax@lokisec.fr>"
 __copyright__ = "Copyright 2017, Legobot"
@@ -27,7 +28,7 @@ class LegoNettools(Lego):
         Returns:
             Bool: Return True if the command is supported
         """
-        if message['text'] is not None:
+        if Utilities.isNotEmpty(message['text']):
             cmds = ['!whois', '!geoloc', '!ping']
             return message['text'].split()[0] in cmds
 
