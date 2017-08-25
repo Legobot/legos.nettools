@@ -12,6 +12,7 @@ __copyright__ = "Copyright 2017, Legobot"
 class Whois(ToolScheme):
     """The Whois class wrappes the whois linux binary.
     """
+
     def __init__(self, args):
         if utils.isNotEmpty(args):
             super().__init__(args)
@@ -54,6 +55,7 @@ class Whois(ToolScheme):
         Returns:
             str: Registrar
         """
+
         return data.registrar if utils.isNotEmpty(data.registrar) else 'None'
 
     def _getNS(self, data):
@@ -66,6 +68,7 @@ class Whois(ToolScheme):
         Returns:
             str: Name servers
         """
+
         ns = data.name_servers
         return ' - '.join(ns) if utils.isNotEmpty(ns)else 'None'
 
@@ -79,6 +82,7 @@ class Whois(ToolScheme):
         Returns:
             str: Status
         """
+
         return data.status[1] if utils.isNotEmpty(data.status) else 'None'
 
     def _getEmails(self, data):
