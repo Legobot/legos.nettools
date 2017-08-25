@@ -44,9 +44,9 @@ The nettools Lego could be triggered by various prefix.
 - [ ] Nslookup
 - [ ] DNS
 - [ ] Trace
-- [X] Ping
-- [ ] SSLscan
-- [X] IP geo
+- [x] Ping
+- [ ] QUALYS lab
+- [x] IP geo
 
 #### Whois
 
@@ -55,6 +55,10 @@ The nettools Lego could be triggered by various prefix.
 #### Geolocalisation
 
 ` !geoloc {target}`
+
+#### Ping
+
+` !ping {target}`
 
 ## Contributing
 
