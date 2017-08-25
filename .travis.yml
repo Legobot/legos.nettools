@@ -9,8 +9,10 @@ python:
 - nightly
 - pypy
 script:
-- bandit -r .
-- flake8 .
+- bandit -r legos/nettools.py
+- bandit -r legos/tools/*.py
+- flake8 legos/nettools.py
+- flake8 legos/tools/*.py
 notifications:
   irc: irc.0x00sec.org#legobot
   on_success: change
