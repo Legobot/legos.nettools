@@ -23,8 +23,7 @@ setup(
                       'pytest==3.0.5'
                       ],
     classifiers=[
-        'License :: MIT',
-
+        'License :: OSI Approved :: MIT License',
         'Programming Language :: Python :: 3'
     ],
     packages=find_packages()
