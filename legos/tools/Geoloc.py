@@ -34,6 +34,7 @@ class Geoloc(ToolScheme):
         Returns:
             str: IP information
         """
+
         http = urllib3.PoolManager()
 
         res = http.request('GET', url + self.target)

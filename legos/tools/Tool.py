@@ -14,6 +14,7 @@ class ToolScheme(ABC):
     """ToolScheme is an abstract class which should be implemented in any tools
     supported by LegoNettools.
     """
+
     def __init__(self, args):
         self.cmds = []
         self.target = None

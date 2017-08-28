@@ -18,6 +18,7 @@ class LegoNettools(Lego):
     Args:
         Lego: Lego
     """
+
     @staticmethod
     def listening_for(message):
         """Check if the message contains a command that LegoNettools support.
@@ -28,6 +29,7 @@ class LegoNettools(Lego):
         Returns:
             Bool: Return True if the command is supported
         """
+
         if Utilities.isNotEmpty(message['text']):
             cmds = ['!whois', '!geoloc', '!ping']
             return message['text'].split()[0] in cmds
@@ -39,6 +41,7 @@ class LegoNettools(Lego):
             self: self
             message: The message send by the Legobot framework
         """
+
         tokens = message['text'].split()
         _class = self._factory(tokens[0])
 
@@ -52,8 +55,9 @@ class LegoNettools(Lego):
 
     def _factory(self, cmd):
         cmd = cmd.replace('!', '')
-        _class = cmd.replace(str(cmd[0]), chr(ord(cmd[0]) - 32))
+        _class = str.capitalize(cmd)
 
+        logger.debug('Nettools try to instantiate the ' + _class + ' class')
         return getattr(importlib.import_module('legos.tools.' + _class),
                        _class)
 
@@ -68,6 +72,7 @@ class LegoNettools(Lego):
             Array: Options needed to send back the response to the
                 Legobot framework
         """
+
         try:
             target = message['metadata']['source_channel']
             opts = {'target': target}
@@ -88,6 +93,7 @@ class LegoNettools(Lego):
         Returns:
             str: Class name
         """
+
         return 'nettools'
 
     @staticmethod
@@ -100,6 +106,7 @@ class LegoNettools(Lego):
         Returns:
             str: Helper
         """
+
         help_text = '[!whois, !geoloc, !ping] for further information'
 
         return help_text
