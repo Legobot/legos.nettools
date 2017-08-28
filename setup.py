@@ -15,7 +15,7 @@ setup(
     description=description,
     author='Nitrax',
     url='https://github.com/Legobot/' + name,
-    install_requires=['legobot>=1.1.3,<=2.0.0',
+    install_requires=['legobot>=1.1.4,<=2.0.0',
                       'python-whois',
                       'urllib3',
                       'bandit==1.3.0',

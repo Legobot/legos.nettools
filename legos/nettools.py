@@ -10,6 +10,13 @@ __author__ = "Nitrax <nitrax@lokisec.fr>"
 __copyright__ = "Copyright 2017, Legobot"
 
 logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
+
+handler = logging.StreamHandler()
+formatter = logging.Formatter('%(asctime)s - %(name)s'
+                              ' - %(levelname)s - %(message)s')
+handler.setFormatter(formatter)
+logger.addHandler(handler)
 
 
 class LegoNettools(Lego):
@@ -55,8 +62,9 @@ class LegoNettools(Lego):
 
     def _factory(self, cmd):
         cmd = cmd.replace('!', '')
-        _class = cmd.replace(str(cmd[0]), chr(ord(cmd[0]) - 32))
+        _class = str.capitalize(cmd)
 
+        logger.debug('Nettools try to instantiate the ' + _class + ' class')
         return getattr(importlib.import_module('legos.tools.' + _class),
                        _class)
 

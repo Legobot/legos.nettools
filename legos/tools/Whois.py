@@ -10,7 +10,7 @@ __copyright__ = "Copyright 2017, Legobot"
 
 
 class Whois(ToolScheme):
-    """The Whois class wrappes the whois linux binary.
+    """The Whois class wraps the whois linux binary.
     """
 
     def __init__(self, args):
