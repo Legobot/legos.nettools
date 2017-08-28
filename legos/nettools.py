@@ -10,13 +10,6 @@ __author__ = "Nitrax <nitrax@lokisec.fr>"
 __copyright__ = "Copyright 2017, Legobot"
 
 logger = logging.getLogger(__name__)
-logger.setLevel(logging.DEBUG)
-
-handler = logging.StreamHandler()
-formatter = logging.Formatter('%(asctime)s - %(name)s'
-                              ' - %(levelname)s - %(message)s')
-handler.setFormatter(formatter)
-logger.addHandler(handler)
 
 
 class LegoNettools(Lego):
