@@ -25,4 +25,5 @@ deploy:
     secure: V/WRVBznn5T0UBsJ7JvBGLUqZhvvaFF8CT4WRretjjqf4iI3mYfUKGxZuA/Umd94P4hXQGRSYLb+DHu7dFTUFOoxBbERI7SEnDn763//jijx6MgByiJ9WpHDWpcYqkPGs2JNZn7qJ4uFSDm2+fqMiDBN9eiY83Bt9XXcw2wJyvf+c2C6yPXQ3hXY+fwsBaFZnAjvjaN97YT0TpBNUCwYVIW59FJj+owQBqUw5Yn8vPOgBKL+epQYbLvnxaNTZnl+Bn/spn0EGcIDXWIX26gWMOJcra7ccSGi06CIwcECSRrnwFZ1jtZryD1uJoN/XsCOTpbw52px1LnOkiptQ5jEJ1NmonRJMHzPyCDs5fduVQBgsiVCkfexyheUVoSFA8zjoQMElcRk1RCkdSswRRio8NQbt5WWyT0Jyew8schwwK/9sb88fd9NwnFS1RqsbAiE8N3KXLvHaZnBZbwZFjxWNJJoofrZ/8OxrgimsaZggewptAcZQ3sQ0OakFiaac2s86fJgjFcP0pkyx0B4l7Y+gr+j8lavcmKAgoofz4xQTP7+tkp1EkWhwce1yJ82oDB8kIud9e0bGP843HnjZl1iYrY8HvvlCOvwZRC2kYQIcHeMKgRwsiLbVG5PHi4TVqWNE/sAcmC5JLaJQ1dzBx15GR3U8mLMaET11oE50s2Fd1c=
     on:
       tags: true
-      distributions: sdist bdist_wheel
+      all_branches: true
+      distributions: "sdist bdist_wheel"
