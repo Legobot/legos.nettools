@@ -1,6 +1,6 @@
 # legos.net-tools
 
-[![Travis](https://img.shields.io/travis/bbriggs/legos.nettools.svg)](https://travis-ci.org/bbriggs/legos.nettools) [![PyPI](https://img.shields.io/pypi/pyversions/legos.nettools.svg)](https://pypi.python.org/pypi/legos.nettools/) [![PyPI](https://img.shields.io/pypi/v/legos.nettools.svg)](https://pypi.python.org/pypi/legos.nettools/) [![PyPI](https://img.shields.io/pypi/wheel/legos.nettools.svg)](https://pypi.python.org/pypi/legos.nettools/) [![PyPI](https://img.shields.io/pypi/l/legos.nettools.svg)](https://pypi.python.org/pypi/legos.nettools/) [![PyPI](https://img.shields.io/pypi/status/legos.nettools.svg)](https://pypi.python.org/pypi/legos.nettools/)
+[![Travis](https://img.shields.io/travis/Legobot/legos.nettools.svg)](https://travis-ci.org/Legobot/legos.nettools) [![PyPI](https://img.shields.io/pypi/pyversions/legos.nettools.svg)](https://pypi.python.org/pypi/legos.nettools/) [![PyPI](https://img.shields.io/pypi/v/legos.nettools.svg)](https://pypi.python.org/pypi/legos.nettools/) [![PyPI](https://img.shields.io/pypi/wheel/legos.nettools.svg)](https://pypi.python.org/pypi/legos.nettools/) [![PyPI](https://img.shields.io/pypi/l/legos.nettools.svg)](https://pypi.python.org/pypi/legos.nettools/) [![PyPI](https://img.shields.io/pypi/status/legos.nettools.svg)](https://pypi.python.org/pypi/legos.nettools/)
 
 Provide a set of networking tools which operate from chat.
 
