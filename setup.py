@@ -17,14 +17,12 @@ setup(
     url='https://github.com/Legobot/' + name,
     install_requires=['legobot>=1.1.4,<=2.0.0',
                       'python-whois',
-                      'urllib3',
-                      'bandit==1.3.0',
-                      'flake8==3.2.1',
-                      'pytest==3.0.5'
+                      'urllib3'
                       ],
     classifiers=[
         'License :: OSI Approved :: MIT License',
-        'Programming Language :: Python :: 3'
+        'Programming Language :: Python :: 3',
+        'Development Status :: 4 - Beta'
     ],
     packages=find_packages()
 )
