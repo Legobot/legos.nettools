@@ -70,7 +70,7 @@ class Whois(ToolScheme):
         """
 
         ns = data.name_servers
-        return ' - '.join(ns) if utils.isNotEmpty(ns)else 'None'
+        return ' - '.join(ns) if utils.isNotEmpty(ns) else 'None'
 
     def _getStatus(self, data):
         """Get the target status
