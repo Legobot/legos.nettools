@@ -62,6 +62,11 @@ The nettools Lego could be triggered by various prefix.
 
 ` !ping {target}`
 
+#### resolver
+
+` !resolver {--host | --nslookup} {target}`
+
+
 ## Contributing
 
 As always, pull requests and issues are welcome.
