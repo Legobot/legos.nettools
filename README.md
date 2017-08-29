@@ -44,7 +44,7 @@ The nettools Lego could be triggered by various prefix.
 
 - [x] Whois
 - [x] Resolver
-- [ ] DNS
+- [x] DNS
 - [ ] Trace
 - [x] Ping
 - [ ] QUALYS lab
@@ -62,7 +62,7 @@ The nettools Lego could be triggered by various prefix.
 
 ` !ping {target}`
 
-#### resolver
+#### Resolver
 
 ` !resolver {--host | --nslookup} {target}`
 
