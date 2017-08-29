@@ -130,6 +130,6 @@ class Dns(ToolScheme):
             return 'Domain name invalid'
 
     def getHelp(self):
-        return "!dns {--getA | --getAAAA |" \
-               "--getCNAME | --getMX |" \
+        return "!dns {--getA | --getAAAA | " \
+               "--getCNAME | --getMX | " \
                "--getTXT} {target}"
