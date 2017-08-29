@@ -97,7 +97,8 @@ class Whois(ToolScheme):
         """
 
         if utils.isNotEmpty(data.emails):
-            return ' - '.join(data.emails)
+            emails = data.emails
+            return ' - '.join(emails) if len(emails) < 10 else emails
         else:
             return 'None'
 
