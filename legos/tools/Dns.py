@@ -56,7 +56,7 @@ class Dns(ToolScheme):
             data = dns.resolver.query(self.target, 'A')
             results = []
             for item in data:
-                results.append(str(item.exchange))
+                results.append(str(item.address))
             return ' | '.join(results)
         except:
             return 'Domain name invalid'
@@ -73,7 +73,7 @@ class Dns(ToolScheme):
             data = dns.resolver.query(self.target, 'AAAA')
             results = []
             for item in data:
-                results.append(str(item.exchange))
+                results.append(str(item.address))
             return ' | '.join(results)
         except:
             return 'Domain name invalid'
@@ -90,7 +90,7 @@ class Dns(ToolScheme):
             data = dns.resolver.query(self.target, 'CNAME')
             results = []
             for item in data:
-                results.append(str(item.exchange))
+                results.append(str(item.target))
             return ' | '.join(results)
         except:
             return 'Domain name invalid'
@@ -121,10 +121,10 @@ class Dns(ToolScheme):
            str: TXT record
        """
        	try:
-            data = dns.resolver.query(self.target, 'MX')
+            data = dns.resolver.query(self.target, 'TXT')
             results = []
             for item in data:
-                results.append(str(item.exchange))
+                results.append(str(item.strings))
             return ' | '.join(results)
         except:
             return 'Domain name invalid'
