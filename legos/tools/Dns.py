@@ -16,11 +16,11 @@ class Dns(ToolScheme):
             super().__init__(args)
 
             self.fncs = {
-                'getA': self._getA,
-                'getAAAA': self._getAAAA,
-                'getNS': self._getNS,
-                'getMX': self._getMX,
-                'getTXT': self._getTXT
+                'A': self._A,
+                'AAAA': self._AAAA,
+                'NS': self._NS,
+                'MX': self._MX,
+                'TXT': self._TXT
             }
 
     def run(self):
@@ -34,17 +34,17 @@ class Dns(ToolScheme):
                     except KeyError:
                         results.append('Command unknown: ' + cmd)
             else:
-                results.append(self._getA())
-                results.append(self._getAAAA())
-                results.append(self._getNS())
-                results.append(self._getMX())
-                results.append(self._getTXT())
+                results.append(self._A())
+                results.append(self._AAAA())
+                results.append(self._NS())
+                results.append(self._MX())
+                results.append(self._TXT())
 
             return '\n'.join(results)
         else:
             return self.getHelp()
 
-    def _getA(self):
+    def _A(self):
         """Get the A record
        Args:
            self: self
@@ -61,7 +61,7 @@ class Dns(ToolScheme):
         except:
             return 'Domain name invalid'
 
-    def _getAAAA(self):
+    def _AAAA(self):
         """Get the AAAA record
        Args:
            self: self
@@ -78,7 +78,7 @@ class Dns(ToolScheme):
         except:
             return 'Domain name invalid'
 
-    def _getNS(self):
+    def _NS(self):
         """Get the NS record
        Args:
            self: self
@@ -95,7 +95,7 @@ class Dns(ToolScheme):
         except:
             return 'Domain name invalid'
 
-    def _getMX(self):
+    def _MX(self):
         """Get the MX record
        Args:
            self: self
@@ -112,7 +112,7 @@ class Dns(ToolScheme):
         except:
             return 'Domain name invalid'
 
-    def _getTXT(self):
+    def _TXT(self):
         """Get the TXT record
        Args:
            self: self
@@ -130,6 +130,6 @@ class Dns(ToolScheme):
             return 'Domain name invalid'
 
     def getHelp(self):
-        return "!dns {--getA | --getAAAA | " \
-               "--getNS | --getMX | " \
-               "--getTXT} {target}"
+        return "!dns {--A | --AAAA | " \
+               "--NS | --MX | " \
+               "--TXT} {target}"
