@@ -18,7 +18,7 @@ class Dns(ToolScheme):
             self.fncs = {
                 'getA': self._getA,
                 'getAAAA': self._getAAAA,
-                'getCNAME': self._getCNAME,
+                'getNS': self._getNS,
                 'getMX': self._getMX,
                 'getTXT': self._getTXT
             }
@@ -36,7 +36,7 @@ class Dns(ToolScheme):
             else:
                 results.append(self._getA())
                 results.append(self._getAAAA())
-                results.append(self._getCNAME())
+                results.append(self._getNS())
                 results.append(self._getMX())
                 results.append(self._getTXT())
 
@@ -78,16 +78,16 @@ class Dns(ToolScheme):
         except:
             return 'Domain name invalid'
 
-    def _getCNAME(self):
-        """Get the CNAME record
+    def _getNS(self):
+        """Get the NS record
        Args:
            self: self
            
        Returns:
-           str: CNAME record
+           str: NS record
        """
        	try:
-            data = dns.resolver.query(self.target, 'CNAME')
+            data = dns.resolver.query(self.target, 'NS')
             results = []
             for item in data:
                 results.append(str(item.target))
@@ -131,5 +131,5 @@ class Dns(ToolScheme):
 
     def getHelp(self):
         return "!dns {--getA | --getAAAA | " \
-               "--getCNAME | --getMX | " \
+               "--getNS | --getMX | " \
                "--getTXT} {target}"
