@@ -70,7 +70,9 @@ The nettools Lego could be triggered by various prefix.
 
 ` !qualys {target}`
 
-> Assessment could take time ! Be patient.
+#### Dns
+
+` !dns {--A | --AAAA | --NS | --MX | --TXT } {target}`
 
 ## Contributing
 
