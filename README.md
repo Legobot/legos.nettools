@@ -66,6 +66,9 @@ The nettools Lego could be triggered by various prefix.
 
 ` !resolver {--host | --nslookup} {target}`
 
+#### Dns
+
+` !dns {--A | --AAAA | --NS | --MX | --TXT } {target}`
 
 ## Contributing
 
