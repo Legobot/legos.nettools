@@ -47,9 +47,6 @@ class Dns(ToolScheme):
     def _A(self):
         """Get the A record
 
-       Args:
-           self: self
-
        Returns:
            str: A Record
        """
@@ -64,9 +61,6 @@ class Dns(ToolScheme):
 
     def _AAAA(self):
         """Get the AAAA record
-
-       Args:
-           self: self
 
        Returns:
            str: AAAA record
@@ -83,9 +77,6 @@ class Dns(ToolScheme):
     def _NS(self):
         """Get the NS record
 
-       Args:
-           self: self
-
        Returns:
            str: NS record
        """
@@ -101,9 +92,6 @@ class Dns(ToolScheme):
     def _MX(self):
         """Get the MX record
 
-       Args:
-           self: self
-
        Returns:
            str: MX record
        """
@@ -118,9 +106,6 @@ class Dns(ToolScheme):
 
     def _TXT(self):
         """Get the TXT record
-
-       Args:
-           self: self
 
        Returns:
            str: TXT record
