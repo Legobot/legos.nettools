@@ -48,11 +48,11 @@ class Dns(ToolScheme):
         """Get the A record
        Args:
            self: self
-           
+
        Returns:
            str: A Record
        """
-       	try:
+        try:
             data = dns.resolver.query(self.target, 'A')
             results = []
             for item in data:
@@ -65,11 +65,11 @@ class Dns(ToolScheme):
         """Get the AAAA record
        Args:
            self: self
-           
+
        Returns:
            str: AAAA record
        """
-       	try:
+        try:
             data = dns.resolver.query(self.target, 'AAAA')
             results = []
             for item in data:
@@ -82,11 +82,11 @@ class Dns(ToolScheme):
         """Get the NS record
        Args:
            self: self
-           
+
        Returns:
            str: NS record
        """
-       	try:
+        try:
             data = dns.resolver.query(self.target, 'NS')
             results = []
             for item in data:
@@ -99,11 +99,11 @@ class Dns(ToolScheme):
         """Get the MX record
        Args:
            self: self
-           
+
        Returns:
            str: MX record
        """
-       	try:
+        try:
             data = dns.resolver.query(self.target, 'MX')
             results = []
             for item in data:
@@ -116,11 +116,11 @@ class Dns(ToolScheme):
         """Get the TXT record
        Args:
            self: self
-           
+
        Returns:
            str: TXT record
        """
-       	try:
+        try:
             data = dns.resolver.query(self.target, 'TXT')
             results = []
             for item in data:
