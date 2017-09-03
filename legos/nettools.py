@@ -31,7 +31,8 @@ class LegoNettools(Lego):
         """
 
         if Utilities.isNotEmpty(message['text']):
-            cmds = ['!whois', '!geoloc', '!ping', '!nslookup', '!dns', '!qualys']
+            cmds = ['!whois', '!geoloc', '!ping', '!dns',
+                    '!qualys', '!nslookup']
             return message['text'].split()[0] in cmds
 
     def handle(self, message):
