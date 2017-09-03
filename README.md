@@ -43,7 +43,7 @@ baseplate_proxy.add_child(LegoNettools)
 The nettools Lego could be triggered by various prefix.
 
 - [x] Whois
-- [x] Resolver
+- [x] Nslookup
 - [x] DNS
 - [ ] Trace
 - [x] Ping
@@ -62,9 +62,9 @@ The nettools Lego could be triggered by various prefix.
 
 ` !ping {target}`
 
-#### Resolver
+#### Nslookup
 
-` !resolver {--host | --nslookup} {target}`
+` !nslookup {target}`
 
 #### Qualys
 

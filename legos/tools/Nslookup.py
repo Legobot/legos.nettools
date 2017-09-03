@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import re
 import socket
 
 from Legobot.Utilities import Utilities as utils
@@ -9,7 +10,7 @@ __author__ = "Nitrax <nitrax@lokisec.fr>"
 __copyright__ = "Copyright 2017, Legobot"
 
 
-class Resolver(ToolScheme):
+class Nslookup(ToolScheme):
     """This class allows resolving the IP address from a domain name as well as
        the reverse process.
     """
@@ -18,23 +19,16 @@ class Resolver(ToolScheme):
         if utils.isNotEmpty(args):
             super().__init__(args)
 
-            self.fncs = {
-                'host': self._host,
-                'nslookup': self._nslookup
-            }
-
     def run(self):
         if utils.isNotEmpty(self.target):
-            if len(self.cmds) > 0:
-                for cmd in self.cmds:
-                    try:
-                        return self.fncs[cmd]()
-                    except KeyError:
-                        return 'Command unknown: ' + cmd
+            if re.match(r"^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$", self.target):
+                return self._getIP()
+            else:
+                return self._getDomainName()
         else:
             return self.getHelp()
 
-    def _host(self):
+    def _getDomainName(self):
         """Retrieve the IP address corresponding to a domain name.
 
         Args:
@@ -48,7 +42,7 @@ class Resolver(ToolScheme):
         except:
             return 'Host cannot be resolved'
 
-    def _nslookup(self):
+    def _getIP(self):
         """Retrieve the domain name corresponding to an IP address.
 
         Args:
@@ -63,4 +57,4 @@ class Resolver(ToolScheme):
             return 'IP address cannot be resolved'
 
     def getHelp(self):
-        return " !resolver {--host | --nslookup} {target}"
+        return " !nslookup {target}"
